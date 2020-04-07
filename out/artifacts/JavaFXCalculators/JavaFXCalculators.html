@@ -1,0 +1,43 @@
+<html><head>
+  <SCRIPT src="http://java.com/js/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'JavaFXCalculators.jnlp'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedJavaFXCalculators_id() {
+        dtjava.embed(
+            {
+                id : 'JavaFXCalculators_id',
+                url : 'JavaFXCalculators.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '370',
+                height : '454'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedJavaFXCalculators_id);
+</script>
+
+</head><body>
+<h2>Test page for <b>JavaFXCalculators</b></h2>
+  <b>Webstart:</b> <a href='JavaFXCalculators.jnlp' onclick="return launchApplication('JavaFXCalculators.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>
